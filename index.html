@@ -187,7 +187,7 @@
   .lede{color:var(--text-soft); font-size:1.08rem; max-width:60ch;}
 
   /* ---------- Hero ---------- */
-    .hero-split{position:relative; aspect-ratio:1536/683; display:flex; align-items:center; overflow:hidden;}
+    .hero-split{position:relative; aspect-ratio:1536/500; display:flex; align-items:center; overflow:hidden;}
   .hero-split::before{
     content:""; position:absolute; inset:0;
     background:var(--accent);
@@ -200,19 +200,19 @@
   }
   .hero-split-text{
     position:relative; z-index:1; max-width:540px; color:#F7F1E8;
-    display:flex; flex-direction:column; gap:22px; padding:clamp(32px,6vw,72px);
+    display:flex; flex-direction:column; gap:18px; padding:clamp(28px,5vw,56px);
   }
   .hero-split-text .eyebrow-inv{
     color:#F6F3ED; font-weight:700; letter-spacing:0.01em; font-size:0.85rem; opacity:0.92;
   }
-  .hero-split-h1{font-size:clamp(2.6rem,4.8vw,4.1rem); line-height:1.04; font-weight:800; color:var(--cta); margin:0;}
+  .hero-split-h1{font-size:clamp(2.2rem,4vw,3.4rem); line-height:1.04; font-weight:800; color:var(--cta); margin:0;}
   .hero-split-tagline{letter-spacing:0.02em; font-size:0.8rem; font-weight:700; color:#FFFFFF; margin:0;}
   @media (max-width:860px){
-    .hero-split{aspect-ratio:unset; min-height:480px;}
+    .hero-split{aspect-ratio:unset; min-height:380px;}
     .hero-split::after{
       background-position:90% 92%; background-size:60% auto; opacity:1;
     }
-    .hero-split-text{max-width:none; padding:24px;}
+    .hero-split-text{max-width:none; padding:24px; gap:16px;}
   }
 
 
@@ -405,7 +405,6 @@
       <div class="hero-split-text">
         <span class="eyebrow-inv">✦ Opening early 2027 · Orem, Utah</span>
         <h1 class="hero-split-h1">Your skin.<br>Simplified.</h1>
-        <p class="hero-split-tagline">Facials, that's all</p>
         <button class="btn btn-primary" data-open-waitlist data-interest="General Waitlist">Book Your Facial</button>
       </div>
     </div>
@@ -428,7 +427,7 @@
         </div>
         <div class="menu-row">
           <div>
-            <div class="menu-row-head"><span class="tag-inline">Member favorite</span><h3>The Glass Skin Facial</h3></div>
+            <div class="menu-row-head"><h3>The Glass Skin Facial</h3></div>
             <p class="menu-row-sub">Best for dull, tired, or uneven skin. A hydrating, brightening treatment built for that dewy, lit-from-within glass-skin finish — great before an event, or just because.</p>
           </div>
           <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The Glass Skin Facial">Book This Facial</button>
@@ -480,7 +479,7 @@
     <div class="wrap section">
       <span class="eyebrow">Memberships</span>
       <h1 style="margin-top:10px;">Pick your pace.</h1>
-      <p class="lede" style="margin-top:14px;">Every membership includes access to our full 35-minute service menu, member pricing on K-beauty retail, and priority booking once we open. Pick the pace that fits how often you want to come in.</p>
+      <p class="lede" style="margin-top:14px;">Every membership includes access to our full 35-minute service menu and member pricing on K-beauty retail. Pick the pace that fits how often you want to come in.</p>
 
       <div class="tier-grid" style="margin-top:36px;">
         <div class="tier-card">
@@ -491,7 +490,6 @@
           <ul class="tier-list">
             <li>1 express facial / month</li>
             <li>10% off retail products</li>
-            <li>Standard booking window</li>
           </ul>
           <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow Starter">Join the Waitlist</button>
         </div>
@@ -504,7 +502,6 @@
           <ul class="tier-list">
             <li>2 express facials / month</li>
             <li>15% off retail products</li>
-            <li>Priority booking</li>
           </ul>
           <button class="btn btn-primary btn-block" data-open-waitlist data-interest="Membership: Glow Plus">Join the Waitlist</button>
         </div>
@@ -516,7 +513,6 @@
           <ul class="tier-list">
             <li>3 express facials / month</li>
             <li>20% off retail products</li>
-            <li>Priority booking</li>
           </ul>
           <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow Pro">Join the Waitlist</button>
         </div>
@@ -528,7 +524,6 @@
           <ul class="tier-list">
             <li>4 express facials / month</li>
             <li>25% off retail products</li>
-            <li>Priority booking</li>
           </ul>
           <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow VIP">Join the Waitlist</button>
         </div>
@@ -541,37 +536,17 @@
   <section class="route" id="about" data-route="about">
     <div class="mission-band">
       <div class="wrap" style="max-width:860px;">
-        <span class="eyebrow-inv">Our Mission</span>
-        <h1 style="margin-top:18px; color:var(--cta); font-size:clamp(1.9rem, 3.6vw + 1rem, 3.2rem);">Professional skincare, made affordable and accessible &mdash; without losing the feeling of luxury.</h1>
-        <p class="lede" style="margin-top:22px; color:#FBE8E4; max-width:56ch;">Every client walks out feeling like they belong somewhere beautiful. High-quality Korean skincare, in a space designed to pamper, inspire, and make you feel confident in your own skin.</p>
+        <span class="eyebrow-inv" style="color:var(--cta); opacity:0.92;">✦ Our Mission</span>
+        <h1 style="margin-top:18px; color:var(--cta); font-size:clamp(1.6rem, 2.6vw + 1rem, 2.5rem); line-height:1.15;">We believe great skin shouldn’t be a splurge. The Facial Bar makes professional facials affordable, fun, and easy to fit into real life, so you can walk out glowing and feeling like yourself, only better.</h1>
       </div>
     </div>
 
     <div class="wrap section">
-      <div class="about-hero">
-        <div class="stack" style="gap:16px;">
-          <span class="eyebrow">Our Story</span>
-          <p class="lede">The Facial Bar Co. was founded by Cali McKay, a Utah Valley University-trained counselor who traded spreadsheets of school schedules for spreadsheets of skincare protocols. She loved getting facials but could never quite justify the time or the price tag that came with a real one — so she built The Facial Bar to deliver the same real K-beauty results in 35 minutes, for $35.</p>
-          <p class="lede">She runs The Facial Bar alongside her husband, Sterling McKay, who leads marketing and brand.</p>
-        </div>
-        <div class="founder-card">
-          <div class="avatar-pair">
-            <div class="avatar a1">C</div>
-            <div class="avatar a2">S</div>
-          </div>
-          <h3>Cali &amp; Sterling McKay</h3>
-          <p style="color:var(--text-soft); font-size:0.95rem;">Founder &amp; Managing Member, and Director of Marketing. Utah-based, hands-on, and building The Facial Bar as a family business from the ground up.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap section-tight">
       <div class="banner">
         <div>
           <span class="eyebrow">Why $35</span>
-          <h2 style="margin-top:10px;">Affordable. Not cheap.</h2>
+          <h2 style="margin-top:10px;">Professional facials, minus the price tag and the pressure.</h2>
           <p class="lede" style="margin-top:10px; max-width:46ch;">A traditional facial in Utah runs about $130. Ours is $35 — not because we cut corners, but because we cut the fluff: the upsells, the padding, and the overhead that come with a traditional spa visit. Every protocol still uses real K-beauty technique and real product.</p>
-          <p style="margin-top:16px; font-style:italic; color:var(--text-soft); max-width:46ch;">We want every guest to walk out feeling like they just got a $130 facial — because they got the results of one. They just paid $35 for it.</p>
         </div>
         <div class="price-compare">
           <div class="price-tile muted">
@@ -606,7 +581,7 @@
         </div>
         <div class="qa">
           <button class="qa-q" aria-expanded="false">What's included in a membership?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Every tier includes access to our full service menu, discounted retail, and priority booking, with higher tiers adding more visits per month — see the Memberships page for the current lineup.</p></div>
+          <div class="qa-a"><p>Every tier includes access to our full service menu and discounted retail, with higher tiers adding more visits per month — see the Memberships page for the current lineup.</p></div>
         </div>
         <div class="qa">
           <button class="qa-q" aria-expanded="false">Can I share my membership with someone else?<span class="plus">+</span></button>
