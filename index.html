@@ -763,13 +763,8 @@
       });
     });
 
-    /* ---------------- Waitlist modal + db capability ---------------- */
-    var dbPromise = (function(){
-      try{
-        if(!window.claude || typeof window.claude.use !== 'function'){ return Promise.resolve(null); }
-        return window.claude.use('db').catch(function(){ return null; });
-      }catch(e){ return Promise.resolve(null); }
-    })();
+    /* ---------------- Waitlist modal + Formspree ---------------- */
+    var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqpanwlk';
 
     var modal = document.getElementById('waitlist-modal');
     var formView = document.getElementById('modal-form-view');
@@ -835,10 +830,12 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Joining…';
 
-      dbPromise.then(function(db){
-        if(!db){ throw new Error('db_unavailable'); }
-        return db.collection('waitlist').add(data);
-      }).then(function(){
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      }).then(function(res){
+        if(!res.ok){ throw new Error('submit_failed'); }
         formView.hidden = true;
         successView.hidden = false;
       }).catch(function(){
