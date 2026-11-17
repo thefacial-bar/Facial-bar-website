@@ -765,6 +765,8 @@
 
     /* ---------------- Waitlist modal + Formspree ---------------- */
     var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqpanwlk';
+    /* Backup copy of every sign-up -> "The Facial Bar Waitlist" Google Sheet (Apps Script web app) */
+    var SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_UviZUVuwajj-1BL5a9bN0kuH_6SRwIDkOtjSYaGAOlBBBl7VBwSL7Tqs6o7m6j-zog/exec';
 
     var modal = document.getElementById('waitlist-modal');
     var formView = document.getElementById('modal-form-view');
@@ -830,12 +832,23 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Joining…';
 
-      fetch(FORMSPREE_ENDPOINT, {
+      var toFormspree = fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: new FormData(form)
-      }).then(function(res){
-        if(!res.ok){ throw new Error('submit_failed'); }
+      }).then(function(res){ return res.ok; }).catch(function(){ return false; });
+
+      var toSheet = fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({
+          name: data.name, email: data.email, phone: data.phone,
+          interest: data.interest, message: data.message
+        })
+      }).then(function(){ return true; }).catch(function(){ return false; });
+
+      Promise.all([toFormspree, toSheet]).then(function(results){
+        if(!results[0] && !results[1]){ throw new Error('submit_failed'); }
         formView.hidden = true;
         successView.hidden = false;
       }).catch(function(){
