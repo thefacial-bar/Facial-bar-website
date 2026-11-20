@@ -1,11 +1,15 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><link rel="icon" href="/favicon.ico?v=2" sizes="any">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-</head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Facial Bar</title>
 <meta name="description" content="Express K-beauty facials in Orem, Utah — 35-minute protocols, real results.">
+<meta name="theme-color" content="#F6F3ED">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   @font-face{
     font-family:'Moranga';
@@ -15,383 +19,270 @@
     font-display:swap;
   }
   :root{
-    --bg:#F6F3ED;
-    --surface:#FFFFFF;
-    --surface-2:#FBEDFE;
-    --text:#292625;
-    --text-soft:rgba(41,38,37,0.62);
-    --accent:#ED3B29;
-    --accent-deep:#C23022;
-    --accent-ink:#F6F3ED;
-    --accent-2:#292625;
-    --accent-2-tint:#F1C4FA;
-    --border:rgba(41,38,37,0.1);
-    --shadow: 41,38,37;
-    --nav-bg: 246,243,237;
-    --cta:#F6F3ED;
-    --cta-deep:#E9E1D2;
-    --cta-ink:#292625;
+    --poppy:#ED3B29; --poppy-d:#C23022; --lilac:#F1C4FA; --cream:#F6F3ED; --ink:#292625;
+    --soft:rgba(41,38,37,.68); --line:rgba(41,38,37,.12);
+    color-scheme:light;
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#241F1A;
-      --surface:#322C26;
-      --surface-2:#3D352C;
-      --text:#F7F1E8;
-      --text-soft:#D6C9BA;
-      --accent:#F16658;
-      --accent-deep:#ED3B29;
-      --accent-ink:#292625;
-      --accent-2:#F1C4FA;
-      --accent-2-tint:#3A332E;
-      --border:#4A4038;
-      --shadow: 0,0,0;
-      --nav-bg: 36,31,26;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#241F1A;
-    --surface:#322C26;
-    --surface-2:#3D352C;
-    --text:#F7F1E8;
-    --text-soft:#D6C9BA;
-    --accent:#F16658;
-    --accent-deep:#ED3B29;
-    --accent-ink:#292625;
-    --accent-2:#F1C4FA;
-    --accent-2-tint:#3A332E;
-    --border:#4A4038;
-    --shadow: 0,0,0;
-    --nav-bg: 36,31,26;
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; scroll-padding-top:80px}
+  body{margin:0; background:var(--cream); color:var(--ink); font-family:'DM Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.45; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  h1,h2,h3,h4{font-family:'Moranga',Georgia,serif; font-weight:700; letter-spacing:-.03em; line-height:.95; margin:0}
+  p{margin:0}
+  img{display:block; max-width:100%}
+  button{font:inherit; cursor:pointer; color:inherit}
+  a{color:inherit}
+  [hidden]{display:none !important}
+  :focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 20px}
+  .eyebrow{display:inline-flex; gap:6px; align-items:center; color:var(--poppy-d); font-weight:800; font-size:12.5px; letter-spacing:.07em; text-transform:uppercase; margin-bottom:12px}
+  .eyebrow::before{content:"\2726"; font-family:Arial,sans-serif}
+  .lede{color:var(--soft); font-size:17px; line-height:1.5; max-width:46ch}
+
+  /* Buttons */
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; border-radius:999px; font-weight:700; font-size:16px; padding:15px 26px; text-decoration:none; transition:transform .15s ease, filter .15s ease, box-shadow .15s ease}
+  .btn:active{transform:translateY(2px)}
+  .btn-poppy{background:var(--poppy); color:#fff; box-shadow:0 4px 0 var(--poppy-d)}
+  .btn-poppy:active{box-shadow:0 2px 0 var(--poppy-d)}
+  .btn-cream{background:var(--cream); color:var(--ink); box-shadow:0 4px 0 rgba(41,38,37,.3)}
+  .btn-ghost{background:transparent; color:var(--ink); border:1.5px solid rgba(41,38,37,.25)}
+  .btn-sm{padding:11px 20px; font-size:14px}
+  .btn-block{width:100%}
+  @media (hover:hover){ .btn:hover{filter:brightness(1.06)} }
+
+  /* Nav */
+  .nav{position:sticky; top:0; z-index:40; background:rgba(246,243,237,.9); -webkit-backdrop-filter:saturate(1.4) blur(12px); backdrop-filter:saturate(1.4) blur(12px); border-bottom:1px solid transparent; transition:border-color .2s ease}
+  .nav.scrolled{border-bottom-color:var(--line)}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:66px}
+  .logo-link img{height:30px; width:auto}
+  .nav-links{display:none; list-style:none; gap:32px; margin:0; padding:0}
+  .nav-links a{text-decoration:none; font-weight:700; font-size:15px; color:var(--soft); padding-bottom:4px; border-bottom:2px solid transparent; transition:color .15s ease}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a[aria-current="page"]{color:var(--ink); border-bottom-color:var(--poppy)}
+  .nav-right{display:flex; gap:10px; align-items:center}
+  .nav-book{display:none}
+  .hamburger{width:44px; height:44px; border-radius:50%; background:#fff; border:1px solid var(--line); display:grid; place-items:center; padding:0}
+  .hamburger span{display:block; width:16px; height:2px; background:var(--ink); box-shadow:0 5px 0 var(--ink), 0 -5px 0 var(--ink)}
+  .mobile-menu{max-height:0; overflow:hidden; transition:max-height .3s ease}
+  .mobile-menu.open{max-height:340px}
+  .mobile-menu ul{list-style:none; margin:0; padding:4px 20px 18px}
+  .mobile-menu a{display:block; padding:12px 0; font-family:'Moranga',Georgia,serif; font-weight:700; font-size:26px; letter-spacing:-.02em; text-decoration:none; border-bottom:1px solid var(--line)}
+
+  /* Hero */
+  .hero{padding:12px 16px 0}
+  .arch{--r:calc((100vw - 32px) / 2); max-width:1120px; margin:0 auto; background:var(--poppy); color:var(--cream); text-align:center; border-radius:var(--r) var(--r) 32px 32px; padding:calc(var(--r) * .5) 22px 44px; overflow:hidden}
+  .chip{display:inline-block; background:var(--cream); color:var(--ink); border-radius:999px; font-size:12.5px; font-weight:800; padding:7px 14px; margin-bottom:18px}
+  .arch h1{font-size:clamp(3.3rem, 10.5vw, 7.4rem); color:var(--cream)}
+  .arch p{margin:18px auto 26px; max-width:28ch; font-size:clamp(16px, 1.6vw, 20px); color:rgba(246,243,237,.94)}
+  .js .rise{opacity:0; transform:translateY(18px); animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
+  .js .rise.d1{animation-delay:.08s} .js .rise.d2{animation-delay:.18s} .js .rise.d3{animation-delay:.3s} .js .rise.d4{animation-delay:.42s}
+  @keyframes rise{to{opacity:1; transform:none}}
+
+  /* Sections */
+  .section{padding-top:72px}
+  .h-big{font-size:clamp(2.6rem, 6vw, 4.5rem)}
+
+  /* Menu */
+  .menu-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:22px}
+  .menu-head .lede{margin-top:12px; max-width:34ch}
+  .rail-arrows{display:none; gap:12px}
+  .rail-arrows button{width:56px; height:56px; border-radius:50%; border:1.5px solid rgba(41,38,37,.2); background:transparent; font-size:20px; display:grid; place-items:center; transition:background .15s ease, color .15s ease}
+  .rail-arrows button:hover{background:var(--ink); color:var(--cream); border-color:var(--ink)}
+  .swipe-hint{color:var(--soft); font-size:14px; margin-top:-8px; margin-bottom:16px}
+  .rail{display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 20px; padding:6px 20px 14px; margin:0 -20px; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+  .rail::-webkit-scrollbar{display:none}
+  .fcard{flex:0 0 272px; min-height:340px; border-radius:28px; padding:22px; display:flex; flex-direction:column; scroll-snap-align:start; background:#fff; border:1.5px solid var(--line); transition:transform .25s ease, box-shadow .25s ease}
+  @media (hover:hover){ .fcard:hover{transform:translateY(-6px); box-shadow:0 16px 30px rgba(41,38,37,.12)} }
+  .fcard .num{font-family:'Moranga',Georgia,serif; font-weight:700; font-size:64px; letter-spacing:-.03em; line-height:.9}
+  .fcard .tag{align-self:flex-start; background:var(--lilac); color:var(--ink); border-radius:999px; font-size:11px; font-weight:800; letter-spacing:.05em; padding:5px 10px; margin-top:10px; text-transform:uppercase}
+  .fcard h3{font-size:30px; margin:12px 0 10px}
+  .fcard p{font-size:15px; line-height:1.4; opacity:.86}
+  .fcard .foot{margin-top:auto; padding-top:18px; display:flex; justify-content:space-between; align-items:center; font-weight:800; font-size:14px}
+  .fcard .go{width:48px; height:48px; border-radius:50%; border:0; background:var(--ink); color:var(--cream); font-size:20px; display:grid; place-items:center; transition:transform .2s ease}
+  .fcard .go:hover{transform:rotate(-12deg) scale(1.06)}
+  .fcard.poppy{background:var(--poppy); color:var(--cream); border-color:var(--poppy)}
+  .fcard.poppy .go{background:var(--cream); color:var(--ink)}
+  .fcard.ink{background:var(--ink); color:var(--cream); border-color:var(--ink)}
+  .fcard.ink .go{background:var(--lilac); color:var(--ink)}
+  .dots{display:flex; gap:7px; margin-top:6px}
+  .dots button{width:8px; height:8px; border-radius:8px; border:0; padding:0; background:rgba(41,38,37,.2); transition:width .25s ease, background .25s ease}
+  .dots button.on{width:26px; background:var(--poppy)}
+  .unsure{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center; margin-top:28px; padding:20px 22px; border:1.5px dashed rgba(41,38,37,.22); border-radius:22px}
+  .unsure h3{font-size:22px; margin-bottom:6px; letter-spacing:-.02em}
+  .unsure p{color:var(--soft); font-size:15px; max-width:52ch}
+  .first{margin-top:56px; background:#fff; border:1.5px solid var(--line); border-radius:32px; padding:30px 24px; display:flex; flex-wrap:wrap; gap:22px; justify-content:space-between; align-items:center}
+  .first h2{font-size:clamp(2rem, 4.4vw, 3.2rem)}
+  .first p{margin-top:10px}
+
+  /* Memberships */
+  .mem{display:grid; gap:22px; grid-template-areas:"copy" "card" "fine"}
+  .mem-copy{grid-area:copy} .mem-card{grid-area:card} .fine{grid-area:fine; color:var(--soft); font-size:14px}
+  .mem-copy h2{margin-bottom:16px}
+  .seg{display:flex; background:#fff; border:1px solid var(--line); border-radius:999px; padding:5px; margin-top:24px; max-width:440px}
+  .seg button{flex:1; border:0; background:transparent; border-radius:999px; padding:12px 0; font-weight:800; font-size:14px; color:var(--soft); transition:background .2s ease, color .2s ease}
+  .seg button[aria-selected="true"]{background:var(--ink); color:var(--cream)}
+  .tier{background:#fff; border:1.5px solid var(--line); border-radius:32px; padding:30px 26px; position:relative; box-shadow:0 14px 34px rgba(41,38,37,.07)}
+  .tier.pop{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pop{from{opacity:0; transform:translateY(10px) scale(.98)} to{opacity:1; transform:none}}
+  .tier h3{font-size:32px; letter-spacing:-.02em}
+  .tier .price{font-family:'Moranga',Georgia,serif; font-weight:700; font-size:clamp(72px, 10vw, 130px); letter-spacing:-.04em; line-height:1; margin:14px 0 6px}
+  .tier .price span{font-family:'DM Sans',sans-serif; font-size:20px; font-weight:700; letter-spacing:0}
+  .tier ul{list-style:none; padding:0; margin:14px 0 26px}
+  .tier li{display:flex; gap:10px; padding:8px 0; font-weight:700; font-size:17px}
+  .tier li::before{content:"\2726"; color:var(--poppy); font-family:Arial,sans-serif}
+  .tier .badge{position:absolute; right:22px; top:24px; background:var(--poppy); color:#fff; font-size:11px; font-weight:800; letter-spacing:.05em; padding:6px 11px; border-radius:999px; transform:rotate(5deg); text-transform:uppercase}
+
+  /* About */
+  .mission{background:var(--poppy); color:var(--cream); border-radius:32px; padding:34px 26px 38px}
+  .mission .q{font-family:'Moranga',Georgia,serif; font-weight:700; font-size:90px; line-height:.6; color:var(--lilac); display:block; height:44px}
+  .mission .eyebrow{color:var(--lilac)}
+  .mission h2{font-size:clamp(2rem, 5vw, 4rem); line-height:1.02; color:var(--cream)}
+  .mission p{margin-top:16px; font-size:clamp(16px, 1.5vw, 20px); line-height:1.5}
+  .why{display:grid; gap:30px; align-items:center}
+  .why h2{font-size:clamp(2rem, 4.6vw, 3.6rem); line-height:1}
+  .why .lede{margin-top:18px}
+  .venn{position:relative; height:210px; max-width:340px; width:100%; margin:0 auto}
+  .vc{position:absolute; border-radius:50%; display:grid; place-items:center; text-align:center}
+  .vc small{display:block; font-size:11px; font-weight:800; letter-spacing:.07em; text-transform:uppercase}
+  .vc b{font-family:'Moranga',Georgia,serif; font-size:46px; letter-spacing:-.03em; line-height:1}
+  .v1{width:180px; height:180px; left:0; top:0; background:#fff; border:2px dashed rgba(41,38,37,.25); color:var(--soft)}
+  .v1 b{text-decoration:line-through; text-decoration-thickness:3px}
+  .v2{width:160px; height:160px; right:0; top:44px; background:var(--ink); color:var(--cream); box-shadow:0 0 0 8px var(--cream)}
+  .v2 b{color:var(--lilac)}
+  .js .venn .v2{transform:scale(.6) rotate(-10deg); opacity:0; transition:transform .6s cubic-bezier(.3,1.5,.5,1) .2s, opacity .4s ease .2s}
+  .js .venn.in .v2{transform:none; opacity:1}
+
+  /* FAQ */
+  .faq{display:grid; gap:24px; align-items:start; padding-bottom:20px}
+  .faq-side h2{margin-bottom:6px}
+  .qa{background:#fff; border:1.5px solid var(--line); border-radius:22px; margin-bottom:10px; transition:border-color .2s ease}
+  .qa-q{width:100%; display:flex; justify-content:space-between; align-items:center; gap:14px; text-align:left; background:none; border:0; padding:18px 20px; font-weight:700; font-size:16px}
+  .qa-q i{font-style:normal; flex:0 0 34px; height:34px; border-radius:50%; border:1.5px solid rgba(41,38,37,.18); display:grid; place-items:center; font-size:20px; color:var(--poppy-d); transition:transform .25s ease, background .2s ease, color .2s ease}
+  .qa-a{display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s ease}
+  .qa-a > div{overflow:hidden}
+  .qa-a p{padding:0 20px 18px; color:var(--soft); font-size:15px; line-height:1.5}
+  .qa[data-open="true"]{border-color:var(--poppy)}
+  .qa[data-open="true"] .qa-a{grid-template-rows:1fr}
+  .qa[data-open="true"] .qa-q i{transform:rotate(45deg); background:var(--poppy); color:#fff; border-color:var(--poppy)}
+  .askcard{background:var(--poppy); color:var(--cream); border-radius:28px; padding:28px 24px; margin-top:22px}
+  .askcard h3{font-size:30px; letter-spacing:-.02em; line-height:1; margin-bottom:8px}
+  .askcard p{font-size:15px; opacity:.94; margin-bottom:18px}
+
+  /* Footer */
+  .site-footer{background:var(--ink); color:var(--cream); margin-top:80px; padding:56px 0 calc(110px + env(safe-area-inset-bottom))}
+  .footer-grid{display:grid; gap:34px}
+  .site-footer .flogo{height:34px; width:auto; margin-bottom:14px}
+  .site-footer h4{font-family:'DM Sans',sans-serif; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--lilac); margin-bottom:14px; font-weight:800}
+  .site-footer ul{list-style:none; margin:0; padding:0}
+  .site-footer li{margin-bottom:9px; font-size:15px; color:rgba(246,243,237,.8)}
+  .site-footer p{font-size:15px; color:rgba(246,243,237,.8); max-width:34ch}
+  .site-footer a{text-decoration:none; color:rgba(246,243,237,.86)}
+  .site-footer a:hover{color:#fff; text-decoration:underline}
+  .footer-bottom{margin-top:40px; padding-top:20px; border-top:1px solid rgba(246,243,237,.14); display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; font-size:13px; color:rgba(246,243,237,.66)}
+
+  /* Floating Book button */
+  .dock{position:fixed; left:14px; right:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:35; display:flex; justify-content:space-between; align-items:center; gap:16px; background:var(--poppy); color:#fff; border:0; border-radius:999px; padding:8px 8px 8px 22px; font-weight:800; font-size:16px; box-shadow:0 12px 26px rgba(237,59,41,.4), 0 3px 0 var(--poppy-d); transform:translateY(160%); transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .dock.show{transform:none}
+  .dock .go{background:var(--cream); color:var(--ink); border-radius:999px; padding:12px 18px; font-size:14px}
+
+  /* Scroll reveal */
+  .js .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); transition-delay:var(--d, 0s)}
+  .js .reveal.in{opacity:1; transform:none}
+
+  /* Waitlist modal */
+  .modal-overlay{position:fixed; inset:0; z-index:60; background:rgba(41,38,37,.55); display:flex; align-items:flex-end; justify-content:center}
+  .modal-card{background:var(--cream); width:100%; max-width:480px; border-radius:28px 28px 0 0; padding:30px 22px calc(26px + env(safe-area-inset-bottom)); max-height:92vh; overflow:auto; position:relative; animation:sheet .3s cubic-bezier(.2,.8,.2,1)}
+  @keyframes sheet{from{transform:translateY(40px); opacity:0}}
+  .modal-close{position:absolute; right:16px; top:16px; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:#fff; font-size:16px}
+  #modal-title{font-size:36px}
+  .field{margin-top:14px}
+  .field label{display:block; font-weight:700; font-size:14px; margin-bottom:6px}
+  .field input, .field textarea{width:100%; font:inherit; font-size:16px; padding:13px 14px; border:1.5px solid rgba(41,38,37,.18); border-radius:14px; background:#fff; color:var(--ink); resize:vertical}
+  .field input:focus, .field textarea:focus{border-color:var(--poppy); outline:none; box-shadow:0 0 0 3px rgba(237,59,41,.15)}
+  .form-msg{display:none; margin-top:12px; font-size:14px; color:var(--poppy-d); background:#FBEDFE; border-radius:12px; padding:10px 12px}
+  .form-msg.show{display:block}
+  .modal-note{font-size:12px; color:var(--soft); margin-top:16px; line-height:1.5}
+  .modal-note a{color:var(--poppy-d)}
+  .success-view{text-align:center; padding:24px 0 6px}
+  .success-view h2{font-size:36px; margin-bottom:10px}
+  .success-view p{margin-bottom:20px}
+  .success-badge{width:64px; height:64px; border-radius:50%; background:var(--poppy); color:#fff; font-size:30px; display:grid; place-items:center; margin:0 auto 16px}
+
+  @media (min-width:640px){
+    .modal-overlay{align-items:center; padding:24px}
+    .modal-card{border-radius:28px; padding:34px 30px 30px}
   }
 
-  *{box-sizing:border-box;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'DM Sans', system-ui, sans-serif;
-    line-height:1.3;
-    padding-left:max(20px, env(safe-area-inset-left, 0px));
-    padding-right:max(20px, env(safe-area-inset-right, 0px));
-  }
-  h1,h2,.brand-word{
-    font-family:'Moranga', Georgia, serif;
-    text-wrap:balance;
-    line-height:0.9;
-    letter-spacing:-0.03em;
-    font-weight:700;
-    margin:0;
-  }
-  h3{
-    font-family:'Cal Sans', system-ui, sans-serif;
-    text-wrap:balance;
-    line-height:1;
-    font-weight:400;
-    margin:0;
-  }
-  h1{font-size:clamp(2.3rem, 4.2vw + 1rem, 4rem); font-weight:700;}
-  h2{font-size:clamp(1.7rem, 2.4vw + 1rem, 2.5rem); font-weight:700;}
-  h3{font-size:1.25rem; font-weight:500;}
-  p{margin:0;}
-  a{color:inherit;}
-  img{max-width:100%; display:block;}
-  button{font-family:inherit; cursor:pointer;}
-  .wrap{max-width:1120px; margin:0 auto; padding-inline: clamp(4px, 2vw, 24px);}
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'Cal Sans', sans-serif;
-    font-size:0.78rem; font-weight:600; letter-spacing:0.02em;
-    color:var(--accent-deep);
-  }
-  .eyebrow::before{content:"✦"; font-size:0.9em;}
-
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    padding:13px 26px; border-radius:999px; border:2px solid transparent;
-    font-family:'Cal Sans', sans-serif;
-    font-weight:500; font-size:0.98rem; white-space:nowrap;
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    text-decoration:none;
-  }
-  .btn:active{transform:translateY(1px);}
-  .btn-primary{background:var(--accent); color:var(--accent-ink); border-color:transparent; box-shadow:0 6px 0 rgba(var(--shadow),0.18);}
-  .btn-primary:hover{background:var(--accent-deep); color:var(--accent-ink);}
-  .hero-split-text .btn-primary{background:var(--cta); color:var(--cta-ink); border-color:rgba(41,38,37,0.38);}
-  .hero-split-text .btn-primary:hover{background:var(--cta); filter:brightness(0.93); color:var(--cta-ink);}
-  .btn-outline{background:transparent; color:var(--text); border-color:var(--border);}
-  .btn-outline:hover{border-color:var(--accent); color:var(--accent-deep);}
-  .btn-ghost{background:var(--surface-2); color:var(--accent-deep);}
-  .btn-ghost:hover{background:var(--accent); color:var(--accent-ink);}
-  .btn-sm{padding:9px 18px; font-size:0.88rem;}
-  .btn-block{width:100%;}
-  @media (prefers-reduced-motion:reduce){ .btn{transition:none;} }
-
-  /* ---------- Nav ---------- */
-  .nav{
-    position:sticky; top:env(safe-area-inset-top, 0px); z-index:40;
-    background:rgba(var(--nav-bg),0.92); backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-  }
-  .nav-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px;}
-  .logo-link{display:inline-flex; align-items:center;}
-  .logo-img{height:30px; width:auto;}
-  .logo-dark{display:none;}
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) .logo-light{display:none;}
-    :root:not([data-theme="light"]) .logo-dark{display:block;}
-  }
-  :root[data-theme="dark"] .logo-light{display:none;}
-  :root[data-theme="dark"] .logo-dark{display:block;}
-
-  .nav-links{display:flex; align-items:center; gap:28px; list-style:none; margin:0; padding:0;}
-  .nav-link{
-    font-family:'Cal Sans', sans-serif;
-    font-weight:500; font-size:0.95rem; text-decoration:none; color:var(--text-soft);
-    padding-block:4px; border-bottom:2px solid transparent;
-  }
-  .nav-link[aria-current="page"]{color:var(--text); border-color:var(--accent);}
-  .nav-link:hover{color:var(--accent-deep);}
-  .nav-right{display:flex; align-items:center; gap:14px;}
-  .hamburger{
-    display:none; background:none; border:1px solid var(--border); border-radius:10px;
-    width:42px; height:42px; align-items:center; justify-content:center;
-  }
-  .hamburger span, .hamburger::before, .hamburger::after{content:none;}
-  .hamburger-bars{width:20px; height:2px; background:var(--text); position:relative;}
-  .hamburger-bars::before, .hamburger-bars::after{content:""; position:absolute; left:0; width:20px; height:2px; background:var(--text);}
-  .hamburger-bars::before{top:-6px;} .hamburger-bars::after{top:6px;}
-
-  .mobile-menu{display:none;}
-  @media (max-width: 860px){
-    .nav-links{display:none;}
-    .hamburger{display:flex;}
-    .mobile-menu{
-      display:block; max-height:0; overflow:hidden; border-top:1px solid var(--border);
-      transition:max-height .25s ease;
-    }
-    .mobile-menu.open{max-height:260px;}
-    .mobile-menu ul{list-style:none; margin:0; padding:14px 0; display:flex; flex-direction:column; gap:4px;}
-    .mobile-menu a{display:block; padding:12px 4px; font-weight:600; text-decoration:none; color:var(--text);}
-    .mobile-menu a[aria-current="page"]{color:var(--accent-deep);}
-  }
-  @media (min-width:861px){ .mobile-menu{display:none !important;} }
-
-  /* ---------- Layout sections ---------- */
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
-  .route{padding-block:56px; scroll-margin-top:88px;}
-  .section-band{background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
-  .section{padding-block:56px;}
-  .section-tight{padding-block:32px;}
-  .center{text-align:center;}
-  .stack{display:flex; flex-direction:column;}
-  .lede{color:var(--text-soft); font-size:1.08rem; max-width:60ch;}
-
-  /* ---------- Hero ---------- */
-    .hero-split{position:relative; aspect-ratio:1536/500; display:flex; align-items:center; overflow:hidden;}
-  .hero-split::before{
-    content:""; position:absolute; inset:0;
-    background:var(--accent);
-  }
-  .hero-split::after{
-    content:""; position:absolute; inset:0;
-    background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Jdm9yeSIgZGF0YS1uYW1lPSJMb2dvIEl2b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y3ZjNlZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4=);
-    background-repeat:no-repeat; background-position:95% 86%; background-size:30% auto;
-    opacity:1;
-  }
-  .hero-split-text{
-    position:relative; z-index:1; max-width:540px; color:#F7F1E8;
-    display:flex; flex-direction:column; gap:18px; padding:clamp(28px,5vw,56px);
-  }
-  .hero-split-text .eyebrow-inv{
-    color:#F6F3ED; font-weight:700; letter-spacing:0.01em; font-size:0.85rem; opacity:0.92;
-  }
-  .hero-split-h1{font-size:clamp(2.2rem,4vw,3.4rem); line-height:1.04; font-weight:800; color:var(--cta); margin:0;}
-  .hero-split-tagline{letter-spacing:0.02em; font-size:0.8rem; font-weight:700; color:#FFFFFF; margin:0;}
-  @media (max-width:860px){
-    .hero-split{aspect-ratio:unset; min-height:380px;}
-    .hero-split::after{
-      background-position:90% 92%; background-size:60% auto; opacity:1;
-    }
-    .hero-split-text{max-width:none; padding:24px; gap:16px;}
+  /* Desktop */
+  @media (min-width:900px){
+    .wrap{padding:0 40px}
+    .nav-row{height:78px}
+    .logo-link img{height:36px}
+    .nav-links{display:flex}
+    .nav-book{display:inline-flex}
+    .hamburger, .mobile-menu{display:none}
+    .hero{padding:26px 40px 0}
+    .arch{--r:min(560px, calc((100vw - 80px) / 2)); padding:calc(var(--r) * .27) 40px 70px; border-radius:var(--r) var(--r) 40px 40px}
+    .chip{font-size:13px; padding:8px 16px; margin-bottom:22px}
+    .section{padding-top:110px}
+    .rail-arrows{display:flex}
+    .swipe-hint{display:none}
+    .rail{gap:20px; margin:0 -40px; padding:6px 40px 14px; scroll-padding:0 40px}
+    .fcard{flex-basis:300px; min-height:400px}
+    .fcard .num{font-size:76px}
+    .fcard h3{font-size:34px}
+    .fcard p{font-size:16px}
+    .first{padding:40px 44px}
+    .mem{grid-template-columns:1fr 1.1fr; grid-template-areas:"copy card" "fine card"; column-gap:70px; row-gap:0; align-items:center}
+    .fine{align-self:start; margin-top:18px}
+    .tier{padding:48px 50px; border-radius:40px}
+    .tier h3{font-size:40px}
+    .tier li{font-size:18px}
+    .tier .badge{right:36px; top:36px; font-size:13px; padding:8px 14px}
+    .mission{display:grid; grid-template-columns:1.25fr 1fr; gap:60px; align-items:end; padding:70px; border-radius:44px}
+    .mission .q{font-size:150px; height:70px}
+    .mission p{margin-top:0}
+    .why{grid-template-columns:1fr 1fr; gap:60px}
+    .venn{height:330px; max-width:560px}
+    .v1{width:300px; height:300px}
+    .v2{width:270px; height:270px; top:50px; box-shadow:0 0 0 12px var(--cream)}
+    .vc b{font-size:76px}
+    .vc small{font-size:13px}
+    .faq{grid-template-columns:.85fr 1.15fr; gap:70px}
+    .faq-side{position:sticky; top:110px}
+    .qa-q{font-size:18px; padding:22px 26px}
+    .qa-a p{padding:0 26px 22px; font-size:16.5px}
+    .footer-grid{grid-template-columns:1.4fr 1fr 1fr; gap:40px}
+    .site-footer{padding-bottom:40px}
+    .dock{left:auto; right:32px; bottom:28px; gap:18px; padding-left:26px}
   }
 
-
-  /* ---------- Service menu (editorial list) ---------- */
-  .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:28px; flex-wrap:wrap;}
-  .menu-row{
-    display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center;
-    background:var(--accent-2-tint); border-radius:20px; padding:28px 24px; margin:8px 0;
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *, *::before, *::after{animation:none !important; transition:none !important}
+    .js .reveal, .js .rise, .js .venn .v2{opacity:1 !important; transform:none !important}
   }
-  .menu-row-head{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
-  .menu-row-head h3{font-size:1.35rem;}
-  .menu-row-sub{color:var(--text-soft); font-size:0.98rem; margin-top:6px; max-width:54ch;}
-  .tag-inline{
-    background:var(--surface); color:var(--accent-deep); font-size:0.7rem; font-weight:700;
-    letter-spacing:0.01em; padding:4px 10px; border-radius:999px;
-  }
-  .menu-row .btn-ghost{background:var(--surface); color:var(--accent-deep);}
-  .menu-row .btn-ghost:hover{background:var(--accent); color:var(--accent-ink);}
-  @media (max-width:700px){
-    .menu-row{grid-template-columns:1fr; row-gap:16px; justify-items:start;}
-  }
-
-  /* ---------- Banner ---------- */
-  .banner{
-    background:var(--accent-2-tint); border-radius:28px; padding:clamp(28px,4vw,48px);
-    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
-  }
-  .banner h2{max-width:20ch;}
-  @media (max-width:700px){ .banner{flex-direction:column; align-items:flex-start; text-align:left;} }
-
-  /* ---------- Membership cards ---------- */
-  .tier-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
-  .tier-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:26px;
-    display:flex; flex-direction:column; gap:16px; min-width:0;
-  }
-  .tier-card.featured{border-color:var(--accent); box-shadow:0 0 0 3px rgba(237,59,41,0.16);}
-  .tier-price{font-family:'Cal Sans',sans-serif; font-size:2.2rem; font-weight:800;}
-  .tier-price span{font-family:'Cal Sans',sans-serif; font-size:0.95rem; font-weight:500; color:var(--text-soft);}
-  .tier-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:0.93rem; color:var(--text-soft); flex:1;}
-  .tier-list li{display:flex; gap:8px; align-items:flex-start;}
-  .tier-list li::before{content:"✓"; color:#06B379; font-weight:700; flex-shrink:0;}
-  @media (max-width:980px){ .tier-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
-  @media (max-width:560px){ .tier-grid{grid-template-columns:minmax(0,1fr);} }
-  .fine-print{font-size:0.85rem; color:var(--text-soft); margin-top:18px;}
-
-  /* ---------- About page ---------- */
-  .mission-band{background:var(--accent); padding-block:72px;}
-  @media (max-width:760px){ .mission-band{padding-block:48px;} }
-  .about-hero{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
-  .founder-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:30px;
-    display:flex; flex-direction:column; gap:14px;
-  }
-  .avatar-pair{display:flex; gap:-10px;}
-  .avatar{width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    font-family:'Cal Sans',sans-serif; font-weight:700; color:#fff; font-size:1rem; border:3px solid var(--surface);}
-  .avatar.a1{background:var(--accent);}
-  .avatar.a2{background:var(--accent-2); margin-left:-14px;}
-  @media (max-width:820px){ .about-hero{grid-template-columns:1fr;} }
-
-  .price-compare{display:flex; align-items:center; gap:14px; flex-shrink:0;}
-  .price-tile{display:flex; flex-direction:column; align-items:center; gap:6px; padding:20px 24px; border-radius:20px; min-width:128px;}
-  .price-tile.muted{background:var(--bg); border:1px dashed var(--border);}
-  .price-tile.muted .price-value{text-decoration:line-through; color:var(--text-soft); font-size:1.8rem;}
-  .price-tile.highlight{background:var(--accent); color:var(--accent-ink); box-shadow:0 6px 0 rgba(var(--shadow),0.18);}
-  .price-tile.highlight .price-value{font-size:2.5rem;}
-  .price-label{font-size:0.7rem; font-weight:700; letter-spacing:0.01em; opacity:0.75;}
-  .price-value{font-family:'Cal Sans',sans-serif; font-weight:800;}
-  .price-vs{font-family:'Cal Sans',sans-serif; font-weight:700; color:var(--text-soft); font-size:1.05rem;}
-  @media (max-width:700px){ .price-compare{flex-direction:column;} }
-  .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
-  .value-card{padding:22px; border-radius:20px; background:var(--accent-2-tint);}
-  .value-card h3{color:var(--text); margin-bottom:8px;}
-  .value-card p{color:var(--text-soft); font-size:0.94rem;}
-  @media (max-width:760px){ .values-grid{grid-template-columns:1fr;} }
-
-  .location-card{
-    display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--border); border-radius:24px; overflow:hidden;
-  }
-  .location-info{padding:32px; display:flex; flex-direction:column; gap:14px; background:var(--surface);}
-  .location-map{background:var(--surface-2); padding:32px; display:flex; flex-direction:column; justify-content:center; gap:10px;}
-  .location-map .big{font-family:'Cal Sans',sans-serif; font-size:1.4rem; font-weight:700;}
-  .hours-row{display:flex; justify-content:space-between; gap:12px; font-size:0.95rem; padding-block:6px; border-bottom:1px dashed var(--border);}
-  .hours-row:last-child{border-bottom:none;}
-  @media (max-width:760px){ .location-card{grid-template-columns:1fr;} }
-
-  /* ---------- FAQ ---------- */
-  .accordion{display:flex; flex-direction:column; gap:12px;}
-  .qa{border:1px solid var(--border); border-radius:18px; background:var(--surface); overflow:hidden;}
-  .qa-q{
-    width:100%; text-align:left; background:none; border:none; padding:20px 22px;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    font-family:'Cal Sans',sans-serif; font-weight:700; font-size:1.05rem; color:var(--text);
-  }
-  .qa-q .plus{font-size:1.4rem; font-weight:400; color:var(--accent-deep); transition:transform .2s ease; flex-shrink:0;}
-  .qa[data-open="true"] .plus{transform:rotate(45deg);}
-  .qa-a{padding:0 22px; max-height:0; overflow:hidden; transition:max-height .25s ease, padding .25s ease;}
-  .qa[data-open="true"] .qa-a{padding:0 22px 20px; max-height:400px;}
-  .qa-a p{color:var(--text-soft); font-size:0.96rem;}
-  @media (prefers-reduced-motion:reduce){ .qa-a{transition:none;} }
-
-  /* ---------- Footer ---------- */
-  .site-footer{background:var(--bg); margin-top:64px; border-top:1px solid var(--border);}
-  :root[data-theme="dark"] .site-footer, :root:not([data-theme="light"]) .site-footer{}
-  .footer-inner{padding-block:48px 32px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:32px;}
-  .footer-col h4{font-family:'Cal Sans',sans-serif; font-size:0.95rem; font-weight:700; margin-bottom:14px;}
-  .footer-col ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
-  .footer-col a{text-decoration:none; color:var(--text-soft); font-size:0.93rem;}
-  .footer-col a:hover{color:var(--accent-deep);}
-  .footer-bottom{
-    border-top:1px solid var(--border); padding-block:18px;
-    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-    font-size:0.82rem; color:var(--text-soft);
-    padding-bottom:calc(18px + env(safe-area-inset-bottom,0px));
-  }
-  @media (max-width:760px){ .footer-inner{grid-template-columns:1fr; gap:28px;} }
-
-  /* ---------- Modal ---------- */
-  .modal-overlay{
-    position:fixed; inset:0; background:rgba(20,15,12,0.55); z-index:100;
-    display:flex; align-items:flex-end; justify-content:center; padding:0;
-  }
-  @media (min-width:640px){ .modal-overlay{align-items:center; padding:20px;} }
-  .modal-card{
-    background:var(--surface); width:100%; max-width:460px; border-radius:24px 24px 0 0;
-    padding:28px clamp(20px,5vw,32px) calc(28px + env(safe-area-inset-bottom,0px));
-    max-height:88vh; overflow-y:auto; position:relative;
-    box-shadow:0 20px 60px rgba(var(--shadow),0.3);
-  }
-  @media (min-width:640px){ .modal-card{border-radius:24px;} }
-  .modal-close{
-    position:absolute; top:16px; right:16px; width:36px; height:36px; border-radius:50%;
-    border:1px solid var(--border); background:var(--surface); font-size:1.1rem; color:var(--text-soft);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .modal-close:hover{background:var(--surface-2); color:var(--accent-deep);}
-  .field{display:flex; flex-direction:column; gap:6px; margin-top:16px;}
-  .field label{font-size:0.85rem; font-weight:600; color:var(--text-soft);}
-  .field input, .field select, .field textarea{
-    font-family:inherit; font-size:0.98rem; padding:12px 14px; border-radius:12px;
-    border:1px solid var(--border); background:var(--bg); color:var(--text); width:100%;
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--accent); outline-offset:1px;}
-  .modal-note{font-size:0.82rem; color:var(--text-soft); margin-top:14px;}
-  .form-msg{font-size:0.88rem; padding:10px 12px; border-radius:10px; margin-top:14px; display:none;}
-  .form-msg.show{display:block;}
-  .form-msg.error{background:var(--surface-2); color:var(--accent-deep);}
-  .success-view{display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding-top:8px;}
-  .success-badge{width:52px; height:52px; border-radius:50%; background:var(--accent-2-tint); color:var(--accent-2);
-    display:flex; align-items:center; justify-content:center; font-size:1.5rem;}
-
-  :focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
-  [hidden]{display:none !important;}
 </style>
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+</head>
+<body>
 
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="wrap nav-row">
-    <a href="#home" class="logo-link" aria-label="The Facial Bar home">
-      <img class="logo-img logo-light" alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Qb3BweSIgZGF0YS1uYW1lPSJMb2dvIFBvcHB5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2VkM2IyOTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4=">
-      <img class="logo-img logo-dark" alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Jdm9yeSIgZGF0YS1uYW1lPSJMb2dvIEl2b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y3ZjNlZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4=">
-    </a>
+    <a href="#home" class="logo-link" aria-label="The Facial Bar home"><img alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Qb3BweSIgZGF0YS1uYW1lPSJMb2dvIFBvcHB5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2VkM2IyOTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4="></a>
     <ul class="nav-links">
-      <li><a class="nav-link" data-route="home" href="#home">Home</a></li>
-      <li><a class="nav-link" data-route="memberships" href="#memberships">Memberships</a></li>
-      <li><a class="nav-link" data-route="about" href="#about">About Us</a></li>
-      <li><a class="nav-link" data-route="faq" href="#faq">FAQ</a></li>
+      <li><a data-route="home" href="#home">Home</a></li>
+      <li><a data-route="memberships" href="#memberships">Memberships</a></li>
+      <li><a data-route="about" href="#about">About Us</a></li>
+      <li><a data-route="faq" href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
-      <button class="btn btn-primary btn-sm" data-open-waitlist data-interest="General Waitlist">Book Now</button>
-      <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-        <span class="hamburger-bars"></span>
-      </button>
+      <button class="btn btn-poppy btn-sm nav-book" data-open-waitlist data-interest="General Waitlist">Book Now</button>
+      <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span></button>
     </div>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <ul class="wrap">
+    <ul>
       <li><a data-route="home" href="#home">Home</a></li>
       <li><a data-route="memberships" href="#memberships">Memberships</a></li>
       <li><a data-route="about" href="#about">About Us</a></li>
@@ -402,271 +293,255 @@
 
 <main>
   <!-- ============ HOME ============ -->
-  <section class="route" id="home" data-route="home">
-    <div class="hero-split">
-      <div class="hero-split-text">
-        <span class="eyebrow-inv">✦ Opening early 2027 · Orem, Utah</span>
-        <h1 class="hero-split-h1">Your skin.<br>Simplified.</h1>
-        <button class="btn btn-primary" data-open-waitlist data-interest="General Waitlist">Book Your Facial</button>
+  <section id="home" data-route="home">
+    <div class="hero" id="hero">
+      <div class="arch">
+        <span class="chip rise d1">&#10022; Opening early 2027 &middot; Orem, Utah</span>
+        <h1 class="rise d2">Your skin.<br>Simplified.</h1>
+        <p class="rise d3">Express K-beauty facials that fit your day and your wallet.</p>
+        <div class="rise d4"><button class="btn btn-cream" data-open-waitlist data-interest="General Waitlist">Book Your Facial &rarr;</button></div>
       </div>
     </div>
 
-    <div class="wrap section">
-      <div class="section-head">
+    <div class="wrap section" id="menu">
+      <div class="menu-head reveal">
         <div>
           <span class="eyebrow">The Menu</span>
-          <h2>Five ways to glow.</h2>
+          <h2 class="h-big">Five ways to glow.</h2>
+          <p class="lede">Every facial runs 35 minutes. Pick the one that matches what your skin needs today.</p>
         </div>
-        <p class="lede" style="max-width:32ch;">Every facial runs 35 minutes. Pick the one that matches what your skin needs today.</p>
-      </div>
-      <div style="margin-top:4px;">
-        <div class="menu-row">
-          <div>
-            <div class="menu-row-head"><span class="tag-inline">Start here</span><h3>The House Facial</h3></div>
-            <p class="menu-row-sub">Best for first-time guests. Our house specialty — cleanse, gentle exfoliation, and hydration — is the clearest way to feel what a 35-minute K-beauty facial can do.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The House Facial">Book This Facial</button>
-        </div>
-        <div class="menu-row">
-          <div>
-            <div class="menu-row-head"><h3>The Glass Skin Facial</h3></div>
-            <p class="menu-row-sub">Best for dull, tired, or uneven skin. A hydrating, brightening treatment built for that dewy, lit-from-within glass-skin finish — great before an event, or just because.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The Glass Skin Facial">Book This Facial</button>
-        </div>
-        <div class="menu-row">
-          <div>
-            <div class="menu-row-head"><h3>The Fresh Start Facial</h3></div>
-            <p class="menu-row-sub">Best for congested, textured, or breakout-prone skin. A deep-cleanse, extraction-focused reset that clears out buildup and leaves your skin a clean slate — without over-stripping.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The Fresh Start Facial">Book This Facial</button>
-        </div>
-        <div class="menu-row">
-          <div>
-            <div class="menu-row-head"><h3>The Relaxation Facial</h3></div>
-            <p class="menu-row-sub">Best for stress as much as skin. Cooling tools and calming massage techniques, paced to relax you as much as it treats your face.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The Relaxation Facial">Book This Facial</button>
-        </div>
-        <div class="menu-row">
-          <div>
-            <div class="menu-row-head"><span class="tag-inline">Kid-friendly</span><h3>The Mini Glow Facial</h3></div>
-            <p class="menu-row-sub">Best for tweens and teens getting their first facial. The same relaxing 35-minute experience, scaled down and gently formulated for younger skin.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="The Mini Glow Facial">Book This Facial</button>
+        <div class="rail-arrows">
+          <button type="button" id="rail-prev" aria-label="Previous facials">&larr;</button>
+          <button type="button" id="rail-next" aria-label="More facials">&rarr;</button>
         </div>
       </div>
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:22px 24px 6px;">
-        <div>
-          <h3 style="font-family:'Moranga',serif; font-weight:700; font-size:1.25rem;">Not sure which one?</h3>
-          <p class="menu-row-sub">Join the waitlist and tell us about your skin — we'll point you to the right facial once booking opens.</p>
-        </div>
-        <button class="btn btn-primary btn-sm" data-open-waitlist data-interest="Need a recommendation">Join the Waitlist</button>
+      <p class="swipe-hint">Swipe to browse &rarr;</p>
+      <div class="rail" id="rail">
+        <article class="fcard reveal" style="--d:0s">
+          <span class="num">01</span><span class="tag">Start here</span>
+          <h3>The House Facial</h3>
+          <p>Best for first-timers. Cleanse, gentle exfoliation, and hydration.</p>
+          <div class="foot"><span>35 min &middot; $35</span><button class="go" data-open-waitlist data-interest="The House Facial" aria-label="Book The House Facial">&rarr;</button></div>
+        </article>
+        <article class="fcard poppy reveal" style="--d:.08s">
+          <span class="num">02</span>
+          <h3>The Glass Skin Facial</h3>
+          <p>Dull or tired skin, meet that dewy, lit-from-within finish.</p>
+          <div class="foot"><span>35 min &middot; $35</span><button class="go" data-open-waitlist data-interest="The Glass Skin Facial" aria-label="Book The Glass Skin Facial">&rarr;</button></div>
+        </article>
+        <article class="fcard reveal" style="--d:.16s">
+          <span class="num">03</span>
+          <h3>The Fresh Start Facial</h3>
+          <p>Congested or breakout-prone? A deep-cleanse reset.</p>
+          <div class="foot"><span>35 min &middot; $35</span><button class="go" data-open-waitlist data-interest="The Fresh Start Facial" aria-label="Book The Fresh Start Facial">&rarr;</button></div>
+        </article>
+        <article class="fcard ink reveal" style="--d:.24s">
+          <span class="num">04</span>
+          <h3>The Relaxation Facial</h3>
+          <p>Cooling tools and calming massage. Skin and stress.</p>
+          <div class="foot"><span>35 min &middot; $35</span><button class="go" data-open-waitlist data-interest="The Relaxation Facial" aria-label="Book The Relaxation Facial">&rarr;</button></div>
+        </article>
+        <article class="fcard poppy reveal" style="--d:.32s">
+          <span class="num">05</span><span class="tag">Kid-friendly</span>
+          <h3>The Mini Glow Facial</h3>
+          <p>A first facial for tweens and teens.</p>
+          <div class="foot"><span>35 min &middot; $35</span><button class="go" data-open-waitlist data-interest="The Mini Glow Facial" aria-label="Book The Mini Glow Facial">&rarr;</button></div>
+        </article>
       </div>
-    </div>
+      <div class="dots" id="rail-dots" aria-hidden="true"></div>
 
-    <div class="wrap section-tight">
-      <div class="banner">
+      <div class="unsure reveal">
+        <div>
+          <h3>Not sure which one?</h3>
+          <p>Join the waitlist and tell us about your skin — we'll point you to the right facial once booking opens.</p>
+        </div>
+        <button class="btn btn-ghost btn-sm" data-open-waitlist data-interest="Need a recommendation">Join the Waitlist</button>
+      </div>
+
+      <div class="first reveal">
         <div>
           <h2>Be first in the chair.</h2>
-          <p class="lede" style="margin-top:8px;">We're opening our doors in Orem early 2027. Join the waitlist and we'll email you the moment booking opens.</p>
+          <p class="lede">We're opening our doors in Orem early 2027. Join the waitlist and we'll email you the moment booking opens.</p>
         </div>
-        <button class="btn btn-primary" data-open-waitlist data-interest="General Waitlist">Join the Waitlist</button>
+        <button class="btn btn-poppy" data-open-waitlist data-interest="General Waitlist">Join the Waitlist</button>
       </div>
     </div>
   </section>
 
   <!-- ============ MEMBERSHIPS ============ -->
-  <section class="route section-band" id="memberships" data-route="memberships">
+  <section id="memberships" data-route="memberships">
     <div class="wrap section">
-      <span class="eyebrow">Memberships</span>
-      <h1 style="margin-top:10px;">Pick your pace.</h1>
-      <p class="lede" style="margin-top:14px;">Every membership includes access to our full 35-minute service menu and member pricing on K-beauty retail. Pick the pace that fits how often you want to come in.</p>
-
-      <div class="tier-grid" style="margin-top:36px;">
-        <div class="tier-card">
-          <div>
+      <div class="mem">
+        <div class="mem-copy reveal">
+          <span class="eyebrow">Memberships</span>
+          <h2 class="h-big">Pick your pace.</h2>
+          <p class="lede">Every membership includes access to our full 35-minute service menu and member pricing on K-beauty retail. Pick the pace that fits how often you want to come in.</p>
+          <div class="seg" role="tablist" aria-label="Membership tiers">
+            <button role="tab" id="tab-starter" aria-controls="tier-starter" aria-selected="false" tabindex="-1">Starter</button>
+            <button role="tab" id="tab-plus" aria-controls="tier-plus" aria-selected="true">Plus</button>
+            <button role="tab" id="tab-pro" aria-controls="tier-pro" aria-selected="false" tabindex="-1">Pro</button>
+            <button role="tab" id="tab-vip" aria-controls="tier-vip" aria-selected="false" tabindex="-1">VIP</button>
+          </div>
+        </div>
+        <div class="mem-card reveal">
+          <div class="tier" role="tabpanel" id="tier-starter" aria-labelledby="tab-starter" hidden>
             <h3>Glow Starter</h3>
-            <div class="tier-price">$30<span>/mo</span></div>
+            <div class="price">$30<span>/mo</span></div>
+            <ul><li>1 express facial / month</li><li>10% off retail products</li></ul>
+            <button class="btn btn-poppy" data-open-waitlist data-interest="Membership: Glow Starter">Join the Waitlist &rarr;</button>
           </div>
-          <ul class="tier-list">
-            <li>1 express facial / month</li>
-            <li>10% off retail products</li>
-          </ul>
-          <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow Starter">Join the Waitlist</button>
-        </div>
-        <div class="tier-card featured">
-          <div>
-            <span class="eyebrow" style="margin-bottom:6px;">Most popular</span>
+          <div class="tier" role="tabpanel" id="tier-plus" aria-labelledby="tab-plus">
+            <span class="badge">Most popular</span>
             <h3>Glow Plus</h3>
-            <div class="tier-price">$60<span>/mo</span></div>
+            <div class="price">$60<span>/mo</span></div>
+            <ul><li>2 express facials / month</li><li>15% off retail products</li></ul>
+            <button class="btn btn-poppy" data-open-waitlist data-interest="Membership: Glow Plus">Join the Waitlist &rarr;</button>
           </div>
-          <ul class="tier-list">
-            <li>2 express facials / month</li>
-            <li>15% off retail products</li>
-          </ul>
-          <button class="btn btn-primary btn-block" data-open-waitlist data-interest="Membership: Glow Plus">Join the Waitlist</button>
-        </div>
-        <div class="tier-card">
-          <div>
+          <div class="tier" role="tabpanel" id="tier-pro" aria-labelledby="tab-pro" hidden>
             <h3>Glow Pro</h3>
-            <div class="tier-price">$90<span>/mo</span></div>
+            <div class="price">$90<span>/mo</span></div>
+            <ul><li>3 express facials / month</li><li>20% off retail products</li></ul>
+            <button class="btn btn-poppy" data-open-waitlist data-interest="Membership: Glow Pro">Join the Waitlist &rarr;</button>
           </div>
-          <ul class="tier-list">
-            <li>3 express facials / month</li>
-            <li>20% off retail products</li>
-          </ul>
-          <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow Pro">Join the Waitlist</button>
-        </div>
-        <div class="tier-card">
-          <div>
+          <div class="tier" role="tabpanel" id="tier-vip" aria-labelledby="tab-vip" hidden>
             <h3>Glow VIP</h3>
-            <div class="tier-price">$120<span>/mo</span></div>
+            <div class="price">$120<span>/mo</span></div>
+            <ul><li>4 express facials / month</li><li>25% off retail products</li></ul>
+            <button class="btn btn-poppy" data-open-waitlist data-interest="Membership: Glow VIP">Join the Waitlist &rarr;</button>
           </div>
-          <ul class="tier-list">
-            <li>4 express facials / month</li>
-            <li>25% off retail products</li>
-          </ul>
-          <button class="btn btn-outline btn-block" data-open-waitlist data-interest="Membership: Glow VIP">Join the Waitlist</button>
         </div>
+        <p class="fine">Memberships run month-to-month with no long-term contract — pause or cancel anytime once we're open.</p>
       </div>
-      <p class="fine-print">Memberships run month-to-month with no long-term contract — pause or cancel anytime once we're open.</p>
     </div>
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section class="route" id="about" data-route="about">
-    <div class="mission-band">
-      <div class="wrap" style="max-width:860px;">
-        <span class="eyebrow-inv" style="color:var(--cta); opacity:0.92;">✦ Our Mission</span>
-        <h1 style="margin-top:18px; color:var(--cta); font-size:clamp(1.6rem, 2.6vw + 1rem, 2.5rem); line-height:1.15;">We believe great skin shouldn’t be a splurge. The Facial Bar makes professional facials affordable, fun, and easy to fit into real life, so you can walk out glowing and feeling like yourself, only better.</h1>
-      </div>
-    </div>
-
+  <section id="about" data-route="about">
     <div class="wrap section">
-      <div class="banner">
+      <div class="mission reveal">
         <div>
-          <span class="eyebrow">Why $35</span>
-          <h2 style="margin-top:10px;">Professional facials, minus the price tag and the pressure.</h2>
-          <p class="lede" style="margin-top:10px; max-width:46ch;">A traditional facial in Utah runs about $130. Ours is $35 — not because we cut corners, but because we cut the fluff: the upsells, the padding, and the overhead that come with a traditional spa visit. Every protocol still uses real K-beauty technique and real product.</p>
+          <span class="q" aria-hidden="true">&ldquo;</span>
+          <span class="eyebrow">Our Mission</span>
+          <h2>We believe great skin shouldn&rsquo;t be a splurge.</h2>
         </div>
-        <div class="price-compare">
-          <div class="price-tile muted">
-            <span class="price-label">Market average</span>
-            <span class="price-value">$130</span>
-          </div>
-          <span class="price-vs">vs</span>
-          <div class="price-tile highlight">
-            <span class="price-label">The Facial Bar</span>
-            <span class="price-value">$35</span>
-          </div>
+        <p>The Facial Bar makes professional facials affordable, fun, and easy to fit into real life, so you can walk out glowing and feeling like yourself, only better.</p>
+      </div>
+    </div>
+    <div class="wrap section">
+      <div class="why">
+        <div class="reveal">
+          <span class="eyebrow">Why $35</span>
+          <h2>Professional facials, minus the price tag and the pressure.</h2>
+          <p class="lede">A traditional facial in Utah runs about $130. Ours is $35 — not because we cut corners, but because we cut the fluff: the upsells, the padding, and the overhead that come with a traditional spa visit. Every protocol still uses real K-beauty technique and real product.</p>
+        </div>
+        <div class="venn reveal" aria-label="Market average $130 versus The Facial Bar $35">
+          <div class="vc v1"><div><small>Market average</small><b>$130</b></div></div>
+          <div class="vc v2"><div><small>The Facial Bar</small><b>$35</b></div></div>
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="route section-band" id="faq" data-route="faq">
+  <section id="faq" data-route="faq">
     <div class="wrap section">
-      <span class="eyebrow">FAQ</span>
-      <h1 style="margin-top:10px; margin-bottom:28px;">Questions, answered.</h1>
-
-      <div class="accordion" id="accordion">
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">What is an "express" facial?<span class="plus">+</span></button>
-          <div class="qa-a"><p>It's a full facial protocol compressed into 35 minutes — cleansing, treatment, and finishing touches, without the extras that stretch a traditional facial to an hour or more.</p></div>
+      <div class="faq">
+        <div class="faq-side reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="h-big">Questions, answered.</h2>
+          <div class="askcard">
+            <h3>Still have a question?</h3>
+            <p>About a facial, a membership, or anything else — join the waitlist and add a note. We read every one.</p>
+            <button class="btn btn-cream btn-sm" data-open-waitlist data-interest="General question">Join the Waitlist &rarr;</button>
+          </div>
         </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Do I need an appointment?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Yes — with 12 chairs and a 35-minute format, we run on a booking system so you're never waiting around. Online booking opens closer to our opening date; join the waitlist and we'll let you know the moment it's live.</p></div>
+        <div class="accordion reveal" id="accordion">
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-1-q" aria-expanded="false" aria-controls="qa-1-a"><span>What is an "express" facial?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-1-a" role="region" aria-labelledby="qa-1-q"><div><p>It's a full facial protocol compressed into 35 minutes — cleansing, treatment, and finishing touches, without the extras that stretch a traditional facial to an hour or more.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-2-q" aria-expanded="false" aria-controls="qa-2-a"><span>Do I need an appointment?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-2-a" role="region" aria-labelledby="qa-2-q"><div><p>Yes — with 12 chairs and a 35-minute format, we run on a booking system so you're never waiting around. Online booking opens closer to our opening date; join the waitlist and we'll let you know the moment it's live.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-3-q" aria-expanded="false" aria-controls="qa-3-a"><span>What's included in a membership?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-3-a" role="region" aria-labelledby="qa-3-q"><div><p>Every tier includes access to our full service menu and discounted retail, with higher tiers adding more visits per month — see the Memberships page for the current lineup.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-4-q" aria-expanded="false" aria-controls="qa-4-a"><span>Can I share my membership with someone else?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-4-a" role="region" aria-labelledby="qa-4-q"><div><p>Memberships are tied to one person and their monthly visits, but there's no minimum commitment — you can switch tiers or pause anytime to match how often you're coming in.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-5-q" aria-expanded="false" aria-controls="qa-5-a"><span>What products do you use?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-5-a" role="region" aria-labelledby="qa-5-q"><div><p>We carry K-beauty product lines sourced through Kin Aesthetics, chosen specifically for fast-acting, gentle formulas that work within a 35-minute window.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-6-q" aria-expanded="false" aria-controls="qa-6-a"><span>Do I need to remove my makeup before my facial?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-6-a" role="region" aria-labelledby="qa-6-q"><div><p>Nope — come as you are. Removing makeup is simply the first step built into every facial protocol, so if you show up wearing it, we'll take care of it as part of your 35 minutes.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-7-q" aria-expanded="false" aria-controls="qa-7-a"><span>Where are you located, and when do you open?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-7-a" role="region" aria-labelledby="qa-7-q"><div><p>We're at 224 East University Parkway in Orem, Utah, opening early 2027. Join the waitlist and we'll email you the moment we're taking bookings.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-8-q" aria-expanded="false" aria-controls="qa-8-a"><span>What are your hours?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-8-a" role="region" aria-labelledby="qa-8-q"><div><p>Once open: Monday–Saturday, 10:00 AM–7:00 PM. Closed Sundays.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-9-q" aria-expanded="false" aria-controls="qa-9-a"><span>Do you offer gift cards?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-9-a" role="region" aria-labelledby="qa-9-q"><div><p>Yes — gift cards will be available starting at launch.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-10-q" aria-expanded="false" aria-controls="qa-10-a"><span>Is there an age requirement?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-10-a" role="region" aria-labelledby="qa-10-q"><div><p>Guests must be 5 years or older for any service. Anyone under 18, including for our Mini Glow Facial, needs a parent or guardian's consent at time of booking.</p></div></div>
+          </div>
+          <div class="qa" data-open="false">
+            <button class="qa-q" id="qa-11-q" aria-expanded="false" aria-controls="qa-11-a"><span>How do I stay updated?</span><i aria-hidden="true">+</i></button>
+            <div class="qa-a" id="qa-11-a" role="region" aria-labelledby="qa-11-q"><div><p>Join the waitlist below and we'll email you with buildout updates and our official opening date.</p></div></div>
+          </div>
         </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">What's included in a membership?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Every tier includes access to our full service menu and discounted retail, with higher tiers adding more visits per month — see the Memberships page for the current lineup.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Can I share my membership with someone else?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Memberships are tied to one person and their monthly visits, but there's no minimum commitment — you can switch tiers or pause anytime to match how often you're coming in.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">What products do you use?<span class="plus">+</span></button>
-          <div class="qa-a"><p>We carry K-beauty product lines sourced through Kin Aesthetics, chosen specifically for fast-acting, gentle formulas that work within a 35-minute window.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Do I need to remove my makeup before my facial?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Nope — come as you are. Removing makeup is simply the first step built into every facial protocol, so if you show up wearing it, we'll take care of it as part of your 35 minutes.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Where are you located, and when do you open?<span class="plus">+</span></button>
-          <div class="qa-a"><p>We're at 224 East University Parkway in Orem, Utah, opening early 2027. Join the waitlist and we'll email you the moment we're taking bookings.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">What are your hours?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Once open: Monday–Saturday, 10:00 AM–7:00 PM. Closed Sundays.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Do you offer gift cards?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Yes — gift cards will be available starting at launch.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">Is there an age requirement?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Guests must be 5 years or older for any service. Anyone under 18, including for our Mini Glow Facial, needs a parent or guardian's consent at time of booking.</p></div>
-        </div>
-        <div class="qa">
-          <button class="qa-q" aria-expanded="false">How do I stay updated?<span class="plus">+</span></button>
-          <div class="qa-a"><p>Join the waitlist below and we'll email you with buildout updates and our official opening date.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="wrap section-tight">
-      <div class="banner">
-        <div>
-          <h2>Still have a question?</h2>
-          <p class="lede" style="margin-top:8px;">About a facial, a membership, or anything else — join the waitlist and add a note. We read every one.</p>
-        </div>
-        <button class="btn btn-primary" data-open-waitlist data-interest="General question">Join the Waitlist</button>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-col">
-      <a href="#home" aria-label="The Facial Bar home">
-        <img class="logo-img logo-light" style="height:26px; margin-bottom:14px;" alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Qb3BweSIgZGF0YS1uYW1lPSJMb2dvIFBvcHB5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2VkM2IyOTsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4=">
-        <img class="logo-img logo-dark" style="height:26px; margin-bottom:14px;" alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Jdm9yeSIgZGF0YS1uYW1lPSJMb2dvIEl2b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y3ZjNlZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4=">
-      </a>
-      <p style="color:var(--text-soft); font-size:0.9rem; max-width:34ch;">Express K-beauty facials, 35 minutes at a time. Opening early 2027 in Orem, Utah.</p>
-      <button class="btn btn-primary btn-sm" style="margin-top:16px;" data-open-waitlist data-interest="General Waitlist">Book Now</button>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" aria-label="The Facial Bar home"><img class="flogo" alt="The Facial Bar" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTG9nb19Jdm9yeSIgZGF0YS1uYW1lPSJMb2dvIEl2b3J5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjgwIDMyMi44NyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2Y3ZjNlZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMTIyNi40NCwxNTAuMTVjLTE1LjgyLDEuNzYtMzQuNjksMTEuMjgtNDIuNDgsMzNoLTEuOTJ2LTE0LjljMC0xMS45OC0zLjU2LTE2Ljg1LTE0LjU4LTE2Ljg1LTE4LjEzLDAtNTUuNjQsMTEuNjktNTUuNjQsMjIuNjgsMCw3LjQzLDQuODcsOS40MiwxMS4zNCwxMy45NCwzLjkxLDIuOTIsNy43NSw3LjQzLDcuNCwxOC40NXY3NS4zOGMwLDguODQtNi42MywxMS45NS0xMC44MywxNi41NmgtLjAzYy00LjItMy4yNC0xMC4zMi00LjY1LTEwLjMyLTE3LjU5di00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1Ljc2LTc5LjY3LTUxLjEzLDAtNzMuNzgsMjMuNjQtNzMuNzgsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42NSwyMi42MiwxMy4yNiwwLDIxLjY2LTcuMTEsMjcuMjMtMjQuMjgsNC4yLTEwLjM4LDExLjYzLTE4Ljc0LDIyLjk0LTE4Ljc0czE2Ljg1LDguMSwxNi44NSwxOC40MmMwLDExLjY2LTUuODMsMTguNzQtMjAuNzYsMjYuMjQtMjkuNDEsMTYuNS03NS42NiwyNC44OS03NS42Niw2My40MywwLDIwLjY5LDE1LjE4LDQyLjcsNDYuODcsNDIuNywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjIsMjcuMiwzNS4yNywyNy4yLDEyLjk3LDAsMjIuMzMtMy4yNywyNy4wNC04LjE3LDMuNjIsMi42Myw5LjQ1LDMuMDgsMTUuODYsMy4wOGg0Ni45M2MxMC43MywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di01My40YzAtMTYuMTUsNi40MS00OS43MiwyNS4xMS00OS43Miw4LjM5LDAsMTEuNjMsNi4xOCwxMS42MywxNi44NSwwLDE1LjA2LDEyLjI0LDI3LjM2LDI3LjM2LDI3LjM2czI3LjM5LTEyLjMsMjcuMzktMjcuMzZjMC0zOS4wNS0zNS4zLTQ3LjQ0LTUzLjU2LTQ1LjQyWk0xMDUyLjc1LDI1My42MmMwLDIyLjY4LTEyLjY1LDMzLTI2LjUyLDMzLTEwLjA2LDAtMTcuODEtNi43Ni0xNy44MS0xOC40MiwwLTEyLjY1LDEwLjk5LTIxLjQsMjguNDUtMjguMTlsMTUuODktNi4xMnYxOS43M1pNODg1LjY4LDE1MS4zM2MtMTYuODIsMC0zMi4zNSw1LjgzLTQ0Ljk4LDE4Ljc3di03Ni42OWMwLTEwLjAzLTYuNDctMTcuNDYtMjAuNDEtMTcuNDYtMTcuNzgsMC01NiwxMC42Ny01NiwyMi4zMywwLDYuNDcsNC4yMyw4LjM5LDkuNzEsMTIuMjcsNS4xOSwzLjU5LDkuNDIsOC43NSw5LjQyLDIxLjA1bC4zMiwxNDkuNWMwLDEyLjk0LTE0LjI2LDEzLjI5LTE0LjI2LDI1LjU2LDAsMTAuNyw5LjcxLDExLjM0LDIxLjM3LDExLjM0aDI2Ljg0YzEwLjcsMCwxNC4yNi0xLjI4LDE0LjI2LTExLjk4di0zLjI0aDEuNmMxMC43LDExLjM0LDI1LjU2LDE5LjczLDQ5LjUyLDE5LjczLDQ1LjYyLDAsNzMuMTMtMzcuMTksNzMuMTMtODcuNjgsMC01NC4zNi0zMy42Ny04My41MS03MC41NC04My41MVpNODc2LjMsMjk1LjM2Yy0xOS4wOSwwLTM1LjI3LTI4LjE2LTM1LjI3LTYzLjc1di0xMy4yOWMwLTE5LjczLDguMzktMzMsMjIuMzMtMzIuNjgsMjIuOTcsMCwzNi4yMyw0My42OSwzNS45MSw3NC40NSwwLDI0Ljg5LTkuNzEsMzUuMjctMjIuOTcsMzUuMjdaTTM4MS4xOCw4OC4yMmMtMS41NywwLTMuMTEuNzctNC42OCwyLjM0LTUuNjQsNS45Ni0xMC4xOSw3LjgyLTE3LjA3LDcuODItMTIuNDksMC0yMC42My03LjUtMjMuMTMtMjAuNzloMzcuMzhjOC41OSwwLDEyLjUzLTMuOTEsMTIuNTMtMTIuNjksMC0xNC4zOC0xMi41My0yOC4yOS0zNC4yOC0yOC4yOS0yNS4xOCwwLTQxLjQ1LDE4LjEzLTQxLjQ1LDQyLjg2czE2LjU5LDM5LjU2LDQyLjcsMzkuNTZjMTYuOTEsMCwyNy44NC05LjM5LDMxLjYyLTE5LjM4Ljc3LTIuMDUsMS4yNS0zLjk0LDEuMjUtNS44LDAtMy4zLTIuMjEtNS42NC00Ljg3LTUuNjRaTTM0OS4yNyw0OC42NmM5LjU1LDAsMTIuMjEsNy41LDEyLjIxLDE0LjgzLDAsMS4yNS0uMTYsMi44Mi0uNDgsMy45NGgtMjUuNWMuMzItMTAuMTksNS40OC0xOC43NywxMy43Ny0xOC43N1pNMzAzLjE0LDk5LjV2LTI3LjM5YzAtMjEuNzUtNi40MS0zNS44MS0yNi41OS0zNS44MS0xMS44OCwwLTIwLjAyLDYuMDktMjQuODksMTQuMzhoLS43N1Y4LjE0YzAtNS42NC0xLjczLTguMTQtNy4yMS04LjE0LTguMTQsMC0yNi45MSw1LjY0LTI2LjkxLDEwLjk2LDAsMy41OSwyLjUzLDQuNTIsNS40OCw2LjczLDIuMDUsMS40MSwzLjc4LDMuNTksMy43OCw4LjkxdjcyLjkxYzAsNi4yNS02Ljg5LDYuNTctNi44OSwxMS44OCwwLDQuODQsNC4yMyw1LjQ4LDkuMzksNS40OGgyMi42OGM1LjMyLDAsOS41NS0uNjQsOS41NS01LjQ4LDAtNS4zMi02Ljg5LTUuNjQtNi44OS0xMS44OHYtMjUuMzRjMC05LjcxLDMuMjctMTYuOTEsMTAuOTYtMTYuOTFzMTAuMzIsNi40MSwxMC4zMiwxOC4yOXYyMy45NmMwLDYuMjUtNi44OSw2LjU3LTYuODksMTIuMDQsMCw0LjY4LDQuMzksNS4zMiw5LjU1LDUuMzJoMjIuNjhjNS4xNiwwLDkuNTUtLjY0LDkuNTUtNS4zMiwwLTUuNDgtNi44OS01LjgtNi44OS0xMi4wNFpNMjA4LjE5LDgzLjM5Yy01Ljk2LDAtOC43OCw0LjA3LTguNzgsMTAuNDgsMCw5LjU1LTIuMDIsMTIuODEtNi4wOSwxMi44MS01LDAtNS4zMi00LjY4LTUuMzItMTIuMjF2LTQzLjE1aDE0LjA2YzUuNjQsMCw3LjUzLTIuMjEsNy41My02Ljczcy0yLjk4LTUuOTYtNi44OS01Ljk2aC0xNC44NnYtMTcuMmMwLTYuNzMtLjc3LTkuNzEtNS4xNi05LjcxLTEwLjgsMC01Ljk2LDI2LjkxLTI0LjQxLDI2LjkxaC0xLjczYy00LjA3LDAtNy4zNCwxLjI1LTcuMzQsNi41NywwLDMuOTEsMi41LDUuOTYsNi4wOSw2LjEyaDQuNTV2MjguNDVjMCwxNi41OS42NCwzOS4yNywyOS41NywzOS4yNywyMC45NSwwLDI3LjM2LTEzLjI5LDI3LjM2LTI0LjczLDAtNy4zNC0zLjExLTEwLjkyLTguNTktMTAuOTJaTTQ1MS45NCw3Ny44OGMtMjEuMTQsMC0zNS43MiwxMS45OC0zNS43MiwzMC43MnMxNC41OCwzMS4wNywzNS43MiwzMS4wNywzNS40My0xMi4zLDM1LjQzLTMxLjA3LTE0LjIyLTMwLjcyLTM1LjQzLTMwLjcyWk03Mi42MiwxMDQuMThjNy4xMSwwLDEwLjM1LDMuODgsMTIuOTQsMTYuODUsMS45Miw4LjM5LDUuOCwxNi41LDIxLjAxLDE2LjUsMTEuMDIsMCwyMi4zMy04Ljc1LDIyLjMzLTI0LjYsMC0xOC43Ny0xNS4yMi0zNi45LTQzLjM0LTM2LjktMzEuMzksMC02NC41MiwxNi44NS02NC41Miw3MS4yMXY4Ljc1aC03LjE0Yy05LjA3LDAtMTMuOSw1LjE2LTEzLjksMTIuNjIsMCw2Ljc5LDMuODgsMTMuNTgsMTIuNjIsMTMuNThoNy4xMXYxMDAuMDFjMCwxMi45NC0xNC4yMiwxMy4yNi0xNC4yMiwyNC4yNSwwLDEwLjAzLDkuMDMsMTEuMzQsMTkuNzMsMTEuMzRoNDkuNjJjMTAuNywwLDE5LjczLTEuMzEsMTkuNzMtMTEuMzQsMC0xMC45OS0xNC4yMi0xMS42My0xNC4yMi0yNC42di05OS42NmgxMi45NGMxMS42NiwwLDE1LjU0LTQuNTUsMTUuNTQtMTMuOXMtNi4xNS0xMi4zLTE0LjktMTIuM2gtMjMuMjljLTguNzUtOS4wNy0xMy4yNi0xNy44MS0xMy4yNi0zMC40MywwLTEzLjU4LDYuNDctMjEuMzcsMTUuMjItMjEuMzdaTTcyMy41OSwyODEuODRWOTMuNTRjMC0xMC4wNi02LjUzLTE3LjUyLTIwLjQxLTE3LjUyLTE2LjE4LDAtNTYuMDMsMTAuMzgtNTYuMDMsMjIuMDQsMCw2Ljc2LDMuOTQsOC4zOSw5Ljc3LDEyLjU5LDQuODEsMy45MSw5LDcuNzUsOSwyMC40MXYxNTAuNzljMCw4LjQ5LTYuMDUsMTEuNjktMTAuMjUsMTUuOTktNC4xMy0yLjg4LTkuNTgtNC43Ny05LjU4LTE3LjAxdi00OS44MWMtLjk2LTUwLjg3LTIxLjA1LTc5LjY3LTc1LjczLTc5LjY3LTUxLjEzLDAtNzMuNzQsMjMuNjQtNzMuNzQsNDAuODQsMCwxNS4xOCwxMC45OSwyMi42MiwyMi42MiwyMi42MiwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMi0yNC4yOCw0LjItMTAuMzgsMTEuNjMtMTguNzQsMjIuOTctMTguNzRzMTYuODIsOC4xLDE2LjgyLDE4LjQyYzAsMTEuNjYtNS44MywxOC43NC0yMC42OSwyNi4yNC0yOS40NywxNi41LTc1LjczLDI0Ljg5LTc1LjczLDYzLjQzLDAsNS44MywxLjI1LDExLjg1LDMuNzUsMTcuMzktNC4yLTQtOS43NC03LjMtOS43NC0xNS40MXYtMTEyLjkyYy0uMzUtMTAuMDMtNi44Mi0xNy40Ni0yMS4zNy0xNy40Ni0xNy4xNCwwLTU1LjM2LDEwLjMyLTU1LjM2LDIyLjAxLDAsNi43OSw0LjIsOC4zOSwxMC4wNiwxMi41Niw0Ljg3LDMuOTQsOC43MSw3Ljc4LDguNzEsMjAuNDR2MjEuMDFjLTUuMDksMTAuOTktMTMuOTMsMjEuNzgtMjAuNTcsMjkuMTUtOC40Niw5LjM1LTI0LjM4LDIxLjk4LTUxLjA5LDIxLjkxLTI2LjExLS4xLTQ4LjEyLTIyLjY1LTQ4LjEyLTYzLjgxLDAtMjEuNzgsOS40OC0zNy44NiwyNS43OS0zNy42NCwxMy43MS4xLDE2Ljg1LDkuNjcsMjEuOTQsMTkuODksNi4xMiwxMy4yNiwxMS45MiwyNS43MiwzMS43NSwyNS42MywxNi4xNS0uMDYsMjMuNDItMTIuNDMsMjMuMjktMjMuMjktLjIyLTI0Ljg2LTI3LjY1LTQ3Ljg2LTcwLjI4LTQ3LjQ3LTQzLjQxLjMyLTgwLjA1LDMxLjg3LTg0LjQ3LDc4LjI5LTEuMTUtNTAuMjktMjEuMy03OC43Ny03NS43LTc4Ljc3LTUxLjEzLDAtNzMuNzcsMjMuNjEtNzMuNzcsNDAuNzgsMCwxNS4xOCwxMC45OSwyMi42NSwyMi42NSwyMi42NSwxMy4yNiwwLDIxLjY5LTcuMTEsMjcuMTctMjQuMjgsNC4yMy0xMC4zNSwxMS42Ni0xOC43NywyMy0xOC43N3MxNi44Miw4LjEsMTYuODIsMTguNDVjMCwxMS42Ni01LjgzLDE4Ljc3LTIwLjczLDI2LjItMjkuNDQsMTYuNTMtNzUuNywyNC45Mi03NS43LDYzLjQzLDAsMjAuNzMsMTUuMTgsNDIuNzMsNDYuOSw0Mi43MywyOS4xNSwwLDQ1Ljk3LTExLjAyLDU2LjMyLTI5Ljc2aDEuNnYyLjg4YzAsMTQuNTgsMTIuNjUsMjcuMiwzNS4zLDI3LjIsMTkuMDksMCwzMC40LTcuMTEsMzAuNC0xNS44NiwwLTEzLjU4LTE0LjIyLTYuNDctMTQuMjItMjYuMnYtMzEuMzNjNC4zMiw0My42MywzNy41MSw3My4wNyw4Ni41Miw3My4wNywyNS4xOCwwLDQwLjk0LTguMDcsNTQuNDktMjAuNDEsMTEuNTYtMTAuNTcsMjIuNzQtMjMuODcsMzAuNzItNDAuMnYxOS44OWMwLDEyLjk3LTE0LjIyLDEzLjYxLTE0LjIyLDI0LjYsMCwxMC4wMyw5LjA3LDExLjM0LDE5LjczLDExLjM0aDQ2LjkzYzEwLjY3LDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLS42MS0uMDYtMS4xOS0uMTktMS43LDcuNSwxMC4zMSwyMC4zNywxNy44MSwzOC44NiwxNy44MSwyOS4xMiwwLDQ1Ljk3LTExLjAyLDU2LjM1LTI5Ljc2aDEuNTd2Mi44OGMwLDE0LjU4LDEyLjY1LDI3LjIsMzUuMzMsMjcuMiwxMi4zMywwLDIxLjQ2LTMuMDEsMjYuMzMtNy41OSwzLjUyLDIuMTEsOC45MSwyLjUsMTQuODYsMi41aDQ2LjkzYzExLjAyLDAsMTkuNzMtMS4zMSwxOS43My0xMS4zNCwwLTEwLjk5LTE0LjIyLTExLjYzLTE0LjIyLTI0LjZaTTE5Ny40OSwyNTMuNjJjMCwyMi42NS0xMi42MiwzMy0yNi41MiwzMy0xMC4wNiwwLTE3LjgxLTYuNzktMTcuODEtMTguNDIsMC0xMi42MiwxMC45OS0yMS4zNywyOC40OC0yOC4xNmwxNS44Ni02LjE1djE5LjczWk01ODkuNDYsMjUzLjYyYzAsMjIuNjgtMTIuNjUsMzMtMjYuNTIsMzMtMTAuMDMsMC0xNy44MS02Ljc2LTE3LjgxLTE4LjQyLDAtMTIuNjUsMTEuMDItMjEuNCwyOC40OC0yOC4xOWwxNS44Ni02LjEydjE5LjczWiIvPgo8L3N2Zz4="></a>
+        <p>Express K-beauty facials, 35 minutes at a time. Opening early 2027 in Orem, Utah.</p>
+        <button class="btn btn-poppy btn-sm" style="margin-top:18px;" data-open-waitlist data-interest="General Waitlist">Book Now</button>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#memberships">Memberships</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>224 East University Parkway<br>Orem, Utah</li>
+          <li>Mon–Sat, 10am–7pm<br>Closed Sunday</li>
+          <li><a href="tel:+13855252100">(385) 525-2100</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#memberships">Memberships</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms of Service</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <span>© 2026 The Facial Bar Co. LLC</span>
+      <span><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; Opening early 2027 · Orem, Utah</span>
     </div>
-    <div class="footer-col">
-      <h4>Visit</h4>
-      <ul>
-        <li style="color:var(--text-soft);">224 East University Parkway<br>Orem, Utah</li>
-        <li style="color:var(--text-soft);">Mon–Sat, 10am–7pm<br>Closed Sunday</li>
-        <li style="color:var(--text-soft);"><a href="tel:+13855252100">(385) 525-2100</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>© 2026 The Facial Bar Co. LLC</span>
-    <span><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; Opening early 2027 · Orem, Utah</span>
   </div>
 </footer>
+
+<button class="dock" id="dock" data-open-waitlist data-interest="General Waitlist" aria-label="Book your facial — join the waitlist"><span>Book your facial</span><span class="go">Join waitlist &rarr;</span></button>
 
 <!-- ============ WAITLIST MODAL ============ -->
 <div class="modal-overlay" id="waitlist-modal" hidden>
@@ -675,7 +550,7 @@
     <div id="modal-form-view">
       <span class="eyebrow" id="modal-eyebrow">Waitlist</span>
       <h2 id="modal-title" style="margin-top:8px;">Join the waitlist</h2>
-      <p style="color:var(--text-soft); font-size:0.92rem; margin-top:8px;">We're not taking bookings just yet — pop in your info and we'll email you the second The Facial Bar opens.</p>
+      <p style="color:var(--soft); font-size:0.92rem; margin-top:8px;">We're not taking bookings just yet — pop in your info and we'll email you the second The Facial Bar opens.</p>
       <form id="waitlist-form">
         <div class="field">
           <label for="wl-name">Name</label>
@@ -694,19 +569,20 @@
           <textarea id="wl-message" name="message" rows="2"></textarea>
         </div>
         <input type="hidden" id="wl-interest" name="interest" value="General Waitlist">
-        <button type="submit" class="btn btn-primary btn-block" id="wl-submit" style="margin-top:20px;">Join the Waitlist</button>
+        <button type="submit" class="btn btn-poppy btn-block" id="wl-submit" style="margin-top:20px;">Join the Waitlist</button>
         <div class="form-msg error" id="wl-error"></div>
       </form>
-      <p class="modal-note">By joining, you agree to receive occasional emails about our opening. If you provide a phone number, you are also agreeing to receive text messages from The Facial Bar Co. about your waitlist status and our opening. Message &amp; data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP or UNSUBSCRIBE to opt out at any time. See our <a href="privacy.html" style="color:var(--accent-deep); text-decoration:underline;">Privacy Policy</a> for additional details.</p>
+      <p class="modal-note">By joining, you agree to receive occasional emails about our opening. If you provide a phone number, you are also agreeing to receive text messages from The Facial Bar Co. about your waitlist status and our opening. Message &amp; data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP or UNSUBSCRIBE to opt out at any time. See our <a href="privacy.html" style="color:var(--poppy-d); text-decoration:underline;">Privacy Policy</a> for additional details.</p>
     </div>
     <div id="modal-success-view" class="success-view" hidden>
       <div class="success-badge">✓</div>
       <h2>You're on the list!</h2>
-      <p style="color:var(--text-soft);">Thanks — we'll email you the moment The Facial Bar opens for booking.</p>
-      <button class="btn btn-outline" id="modal-done-btn">Close</button>
+      <p style="color:var(--soft);">Thanks — we'll email you the moment The Facial Bar opens for booking.</p>
+      <button class="btn btn-ghost" id="modal-done-btn">Close</button>
     </div>
   </div>
 </div>
+
 
 <script>
 (function(){
@@ -725,9 +601,11 @@
   }
 
   document.addEventListener('DOMContentLoaded', function(){
+    var hasIO = 'IntersectionObserver' in window;
+
     /* Scroll-spy: highlight the nav link for whichever section is in view */
     var sections = document.querySelectorAll('main > section[data-route]');
-    if('IntersectionObserver' in window && sections.length){
+    if(hasIO && sections.length){
       var spy = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
           if(entry.isIntersecting){ setActiveNav(entry.target.dataset.route); }
@@ -737,16 +615,83 @@
     }
     setActiveNav('home');
 
-    /* Close the mobile menu whenever an in-page link is used to jump */
+    /* Nav border once you scroll */
+    var nav = document.getElementById('nav');
+    function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+    /* Mobile menu */
     document.querySelectorAll('a[href^="#"]').forEach(function(a){
       a.addEventListener('click', closeMobileMenu);
     });
-
     var hamburger = document.getElementById('hamburger-btn');
     var mobileMenu = document.getElementById('mobile-menu');
     hamburger.addEventListener('click', function(){
       var open = mobileMenu.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    /* Scroll reveal */
+    var reveals = document.querySelectorAll('.reveal');
+    if(hasIO){
+      var rio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); rio.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el){ rio.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('in'); });
+    }
+
+    /* Floating Book button: appears once you scroll past the hero */
+    var dock = document.getElementById('dock');
+    var hero = document.getElementById('hero');
+    if(hasIO && hero){
+      new IntersectionObserver(function(entries){
+        dock.classList.toggle('show', !entries[0].isIntersecting);
+      }, { threshold: 0 }).observe(hero);
+    } else { dock.classList.add('show'); }
+
+    /* Facial card rail: dots + arrows */
+    var rail = document.getElementById('rail');
+    var dotsWrap = document.getElementById('rail-dots');
+    var cards = rail.querySelectorAll('.fcard');
+    function step(){ var c = cards[0]; return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || 14) : 300; }
+    cards.forEach(function(_, i){
+      var d = document.createElement('button');
+      d.type = 'button'; d.tabIndex = -1;
+      d.addEventListener('click', function(){ rail.scrollTo({ left: i * step(), behavior:'smooth' }); });
+      dotsWrap.appendChild(d);
+    });
+    function updateDots(){
+      var max = rail.scrollWidth - rail.clientWidth;
+      var i = max > 0 && rail.scrollLeft >= max - 4 ? cards.length - 1 : Math.round(rail.scrollLeft / step());
+      dotsWrap.querySelectorAll('button').forEach(function(d, j){ d.classList.toggle('on', j === i); });
+    }
+    rail.addEventListener('scroll', function(){ window.requestAnimationFrame(updateDots); }, { passive:true });
+    updateDots();
+    document.getElementById('rail-prev').addEventListener('click', function(){ rail.scrollBy({ left: -step(), behavior:'smooth' }); });
+    document.getElementById('rail-next').addEventListener('click', function(){ rail.scrollBy({ left: step(), behavior:'smooth' }); });
+
+    /* Membership tier picker */
+    var tabs = document.querySelectorAll('.seg [role="tab"]');
+    function selectTab(tab){
+      tabs.forEach(function(t){
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !on;
+        if(on){ panel.classList.remove('pop'); void panel.offsetWidth; panel.classList.add('pop'); }
+      });
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ selectTab(t); });
+      t.addEventListener('keydown', function(e){
+        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+          var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+          selectTab(n); n.focus(); e.preventDefault();
+        }
+      });
     });
 
     /* Accordion */
@@ -861,8 +806,9 @@
         submitBtn.textContent = 'Join the Waitlist';
       });
     });
+
   });
 })();
 </script>
-
-</body></html>
+</body>
+</html>
